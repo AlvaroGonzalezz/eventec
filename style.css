@@ -20,3 +20,41 @@ header i{
     color: #fff;
     font-size: 50px;
 }
+.inicio{
+   display: flex;
+   flex-direction: column;
+   margin: 0 auto;
+    align-items: center;
+    width: 90%;
+    text-align: center;
+    margin-top: 10%;
+}
+.inicio h1{
+    color: white;
+    font-size: 50px;
+    margin-bottom: 5%;
+}
+.inicio hr{
+    width: 90%;
+    height: 3.5px;
+    background-color: white;
+    margin-bottom: 5%;
+}
+.inicio h4{
+    color: white;
+    font-family: monospace;
+    font-size: 20px;
+    margin-bottom: 15%;
+
+}
+.inicio a{
+    text-decoration: none;
+    color:white;
+    border:solid 1px red;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #950005;
+    padding-left: 35px;
+    padding-right: 35px;
+}
