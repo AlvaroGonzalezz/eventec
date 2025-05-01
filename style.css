@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(90deg, #340c0c, #a62c0b);
+  }
+
+header {
+    background-color: #00000048;
+    text-align: center;
+    align-items: center;
+    padding: 15px;
+}
+header img {
+    width: 25%;
+    margin-right: 85px;
+}
+header i{
+    color: #fff;
+    font-size: 50px;
+}
