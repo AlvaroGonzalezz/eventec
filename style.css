@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -19,6 +20,7 @@ header img {
 header i{
     color: #fff;
     font-size: 50px;
+
 }
 .inicio{
    display: flex;
@@ -31,8 +33,12 @@ header i{
 }
 .inicio h1{
     color: white;
-    font-size: 50px;
+    font-size: 70px;
     margin-bottom: 5%;
+    font-family: "anton",monospace;
+    font-size: 60px;
+    letter-spacing: 2px;
+    font-weight: 500;
 }
 .inicio hr{
     width: 90%;
@@ -45,6 +51,7 @@ header i{
     font-family: monospace;
     font-size: 20px;
     margin-bottom: 15%;
+    font-family: "jetbrains mono";
 
 }
 .inicio a{
@@ -57,4 +64,90 @@ header i{
     background-color: #950005;
     padding-left: 35px;
     padding-right: 35px;
+    font-family: "jetbrains mono";
+
 }
+
+.categorias h2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    font-family: "anton";
+    font-weight: 500;
+    font-size: 40px;
+}
+
+.categorias{
+    display: flex;
+    margin:0 auto !important;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 33px;
+
+}
+
+/* From Uiverse.io by SteveBloX */ 
+.card {
+    font-size: 25px;
+    font-style: italic;
+    font-family: "anton";
+    font-weight: 500;
+    color: white;
+    margin-bottom: 27px;
+    box-sizing: border-box;
+    width: 270px;
+    height: 350px;
+    background: rgba(217, 217, 217, 0.58);
+    border: 1px solid white;
+    box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(6px);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+  
+  .card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+  
+  .card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+
+ .categorias .cultural{
+    background-image: url("imgs/culturales.png");
+    background-size: cover;
+ }
+ .categorias .social{
+    background-image: url("imgs/academicos.png");
+    background-size: cover;
+ }
+ .categorias .deportivo{
+    background-image: url("imgs/deportivos.png");
+    background-size: cover;
+ }
+ .linea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .linea hr {
+    height: 15px;
+    background-color: white;
+    margin-bottom: 5%;
+  }
+  
+  .linea img {
+    height: 30px; /* o el tamaño que quieras */
+  }
+  
