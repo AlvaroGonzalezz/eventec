@@ -1,10 +1,14 @@
+/* Importar fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
+
 body {
     background: linear-gradient(90deg, #340c0c, #a62c0b);
-  }
+}
 
 header {
     background-color: #00000048;
@@ -12,11 +16,197 @@ header {
     align-items: center;
     padding: 15px;
 }
+
 header img {
     width: 25%;
     margin-right: 85px;
 }
-header i{
+/*MENU DEL HEADER*/
+
+header i {
     color: #fff;
     font-size: 50px;
+}
+#menu-toggle {
+    display: none;
+}
+
+
+/* Navegación oculta por defecto */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%; /* Ahora ocupa el 100% */
+    background-color: #a90000;
+    padding: 15px 0; /* Sin padding lateral para que abarque todo */
+    border-radius: 0; /* Sin bordes redondeados */
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease;
+    z-index: 10;
+}
+.nav-links i {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+/* Enlaces */
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Cuando el checkbox está checked (menú abierto) */
+#menu-toggle:checked + .menu-icon + .nav-links {
+    transform: scaleY(1);
+}
+
+/*PAGINA ADMINISTRATIVA*/
+.login .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 0.4em;
+    background-color: #72060a;
+    border-radius: 25px;
+    transition: .4s ease-in-out;
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 40%;
+
+}
+
+.login .form:hover {
+    transform: scale(1.05);
+}
+
+#heading {
+    text-align: center;
+    margin: 1em;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    font-family: 'Anton', sans-serif;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    border-radius: 25px;
+    padding: 0.6em;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #720f0f;
+    box-shadow: inset 2px 5px 10px rgba(5, 5, 5, 0.488);
+}
+
+.input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: white;
+}
+
+.input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color: #f3f3f3;
+}
+
+.input-field::placeholder {
+    color: #f3f3f39c;
+}
+
+.form .btn {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2.5em;
+}
+
+
+.button3 {
+    margin-top: 2em;
+    margin-bottom: 3em;
+    font-size: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: .4s ease-in-out;
+    background-color: #fcfcfc;
+    color: rgb(40, 40, 40) !important;
+    font-family: "jetbrains-mono", monospace;
+    font-weight: 500;
+}
+
+.button3:hover {
+    background-color: #940000;
+    color: white !important;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #00000048;
+    margin-top: 20%;
+    padding: 40px 20px;
+    text-align: center;
+    color: #fff;
+    font-family: 'JetBrains Mono', Courier, monospace;
+}
+
+footer img {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #a90000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background 0.3s;
+    width: 200px;
+}
+
+.btn-social a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.btn-social a:hover {
+    background-color: #810000;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #ddd;
 }
