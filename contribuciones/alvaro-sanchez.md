@@ -4,7 +4,7 @@
 ### **Tareas realizadas**
 - Desarollé la estructura básica del proyecto
 - Desarollé la página de Log-in para el Administrador
-- Desarollé el footer en la página de Log-in
+- Desarollé el footer en la página de Log-ing
 
 ### **Tecnologías usadas**
 - Frontend: HTML, CSS
