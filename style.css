@@ -22,6 +22,10 @@ header i{
     font-size: 50px;
 
 }
+.logo{
+  display: flex;
+  justify-content: space-between;
+}
 .inicio{
    display: flex;
    flex-direction: column;
@@ -151,3 +155,96 @@ header i{
     height: 30px; /* o el tamaño que quieras */
   }
   
+
+
+/* Contenedor del logo */
+.logo-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container img {
+  background-size: cover;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 0 20px gold;
+}
+
+/* Título principal */
+.title {
+  font-size: 2em;
+  margin: 20px 0 10px 0;
+  text-align: center;
+  color: white;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+}
+
+.informacion-titulo { 
+  font-size: 7vw; /* Aumenté el tamaño de la fuente para que sea más grande */
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 300;
+}
+
+
+/* Descripción del evento */
+.descripcion-evento {
+  color: #ddd;
+  font-size: 1.2em;
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto 30px auto;
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.6;
+}
+
+/* Tabla */
+table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(90, 0, 0, 0.6); /* rojo oscuro translúcido */
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+/* Estilo general para las celdas */
+td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Primera columna con color */
+td:nth-child(1) {
+  background-color: rgba(228, 13, 13, 0.564); /* rojo oscuro translúcido */
+  color: white;
+}
+
+/* Segunda columna con otro color */
+td:nth-child(2) {
+  background-color: rgba(172, 60, 29, 0.6); 
+  color: white;
+}
+
+
+
+/* Primera columna en negrita */
+td:first-child {
+  font-weight: bold;
+  color: #f8dede; /* color suave, claro sobre fondo rojo */
+}
