@@ -41,13 +41,15 @@ header i {
     top: 90px;
     left: 0;
     width: 100%; /* Ahora ocupa el 100% */
-    background-color: #a90000;
+    background-color: #750101;
     padding: 15px 0; /* Sin padding lateral para que abarque todo */
     border-radius: 0; /* Sin bordes redondeados */
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s ease;
     z-index: 10;
+    font-family: "JetBrains Mono", Courier, monospace;
+    
 }
 .nav-links i {
     color: #fff;
