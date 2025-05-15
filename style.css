@@ -1,95 +1,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
 }
+
 body {
     background: linear-gradient(90deg, #340c0c, #a62c0b);
-  }
+}
 
+/* Estilos del Header */
 header {
     background-color: #00000048;
-    text-align: center;                                        
+    text-align: center;
     align-items: center;
     padding: 15px;
 }
+
 header img {
     width: 25%;
     margin-right: 85px;
 }
-header i{
+
+header i {
     color: #fff;
     font-size: 50px;
-
 }
-.inicio{
+
+/* Sección de Inicio */
+.inicio {
    display: flex;
    flex-direction: column;
    margin: 0 auto;
-    align-items: center;
-    width: 90%;
-    text-align: center;
-    margin-top: 10%;
+   align-items: center;
+   width: 90%;
+   text-align: center;
+   margin-top: 10%;
 }
-.inicio h1{
+
+.inicio h1 {
     color: white;
     font-size: 70px;
-    margin-bottom: 5%;
-    font-family: "anton",monospace;
-    font-size: 60px;
+    font-family: "Anton", monospace;
     letter-spacing: 2px;
     font-weight: 500;
+    margin-bottom: 5%;
 }
-.inicio hr{
+
+.inicio hr {
     width: 90%;
     height: 3.5px;
     background-color: white;
     margin-bottom: 5%;
 }
-.inicio h4{
+
+.inicio h4 {
     color: white;
-    font-family: monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 20px;
     margin-bottom: 15%;
-    font-family: "jetbrains mono";
-
 }
-.inicio a{
+
+.inicio a {
     text-decoration: none;
-    color:white;
-    border:solid 1px red;
+    color: white;
+    border: solid 1px red;
     padding: 20px;
     font-size: 20px;
     border-radius: 10px;
     background-color: #950005;
     padding-left: 35px;
     padding-right: 35px;
-    font-family: "jetbrains mono";
-
+    font-family: "JetBrains Mono", monospace;
 }
 
-.categorias h2{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    color: white;
-    font-family: "anton";
-    font-weight: 500;
-    font-size: 40px;
-}
-
-.categorias{
-    display: flex;
-    margin:0 auto !important;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 33px;
-
-}
-
+/* Estilos de las tarjetas */
 .card {
   position: relative;
-  top: 13px;
   width: 200px;
   height: 250px;
   border-radius: 14px;
@@ -101,24 +88,22 @@ header i{
   justify-content: center;
   box-shadow: 50px 50px 50px #aa0606, -20px -20px 60px #aa0606;
   margin-bottom: 50px;
-  transition: transform 0.6s ease; 
-  ;
+  transition: transform 0.6s ease;
 }
 
-.card:hover{
+.card:hover {
   transform: scale(1.05);
 }
 
-.card:active{
-  transform: scale(0.95)
-  rotateZ(1.7deg);
+.card:active {
+  transform: scale(0.95) rotateZ(1.7deg);
 }
 
 .card-text {
   position: absolute;
   z-index: 3;
   color: white;
-  font-family: "Arial-black", sans-serif;
+  font-family: "Arial Black", sans-serif;
   font-size: 22px;
   text-align: center;
   pointer-events: none;
@@ -131,7 +116,6 @@ header i{
   width: 190px;
   height: 240px;
   z-index: 2;
-  background-image: url(imgs/academicos.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -141,69 +125,54 @@ header i{
   outline: 2px solid rgb(255, 0, 0);
 }
 
-.blob {
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  left: 50%;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background-color: #ff0000;
-  opacity: 1;
-  filter: blur(12px);
-  animation: blob-bounce 5s infinite ease;
-}
-
-@keyframes blob-bounce {
-  0% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
-
-  25% {
-    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-  }
-
-  50% {
-    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-  }
-
-  75% {
-    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-  }
-
-  100% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
-}
-
- .categorias .cultural{
-    background-image: url("imgs/culturales.png");
-    background-size: cover;
- }
- .categorias .social{
-    background-image: url("imgs/academicos.png");
-    background-size: cover;
- }
- .categorias .deportivo{
-    background-image: url("imgs/deportivos.png");
-    background-size: cover;
- }
- .linea {
+/* Línea con imagen */
+.linea {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
-  }
-  
-  .linea hr {
+}
+
+.linea hr {
     height: 15px;
     background-color: white;
     margin-bottom: 5%;
-  }
-  
-  .linea img {
-    height: 30px; /* o el tamaño que quieras */
-  }
-  
+}
+
+.linea img {
+    height: 30px;
+}
+
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: black;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.slider-track {
+    display: flex;
+    gap: 40px;
+    animation: scroll 10s linear infinite;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.slider-track span {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    padding-right: 40px;
+}
+
+/* Animación infinita sin espacios vacíos */
+@keyframes scroll {
+    100% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
