@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Administración de Eventos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <h1>ADMINISTRACIÓN DE EVENTOS</h1>
+
+  <div class="barra-superior">
+    <a href="#" class="btn-nuevo">
+      <i class="bi bi-plus"></i> NUEVO EVENTO
+    </a>
+
+   <div class="buscador">
+  <label for="buscar">Buscar:</label>
+  <div class="input-con-icono">
+    <i class="bi bi-search"></i>
+    <input type="text" id="buscar" class="caja-buscar" placeholder="Evento">
+  </div>
+</div>
+
+  </div>
+
+  <div class="contenedor-tabla">
+    <table>
+      <thead>
+        <tr>
+          <th>ID EVENTO</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Fecha</th>
+          <th>Ubicación</th>
+          <th>Organizador</th>
+          <th>Estatus</th>
+          <th>Categoría</th>
+          <th>Acción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Hackaton 2025</td>
+          <td>Evento de programación organizado por estudiantes.</td>
+          <td>16/05/2025<br>a las 9:00 AM</td>
+          <td>Tecnológico de Monterrey</td>
+          <td>Estudiantes del Tecnológico de Monterrey</td>
+          <td>Activo</td>
+          <td>Académico</td>
+          <td>
+            <a href="#" class="btn-accion editar"><i class="bi bi-pencil-square"></i></a>
+            <a href="#" class="btn-accion eliminar"><i class="bi bi-trash3-fill"></i></a>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>InnovaTec 2025</td>
+          <td>Evento de certamen de proyectos.</td>
+          <td>11/02/2025<br>a las 10:00</td>
+          <td>Tec San Pedro</td>
+          <td>TECNM</td>
+          <td>Activo</td>
+          <td>Académico</td>
+          <td>
+            <a href="#" class="btn-accion editar"><i class="bi bi-pencil-square"></i></a>
+            <a href="#" class="btn-accion eliminar"><i class="bi bi-trash3-fill"></i></a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

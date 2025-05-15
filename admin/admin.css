@@ -1,0 +1,129 @@
+/* Fondo general */
+body {
+  background: linear-gradient(90deg, #340c0c, #a62c0b);
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', monospace;
+  color: white;
+}
+
+/* Título principal */
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid white;
+  padding-bottom: 10px;
+
+}/*Incluye la barra de evento nuevo y el campo de buscar */
+.barra-superior {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+/* Botón de nuevo evento */
+.btn-nuevo {
+  margin-right: auto;
+  background-color: #b30000;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-nuevo:hover {
+  background-color: #eb0404;
+}
+
+.buscador {
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+  margin-left: auto;
+}
+
+.buscador label {
+  color: white;
+  font-size: 1rem;
+}
+
+.input-con-icono {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-con-icono i {
+  position: absolute;
+  right: 10px;
+  color: gray;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.caja-buscar {
+  padding: 7px 8px;
+  border-radius: 5px;
+}
+
+
+
+/* Tabla de eventos */
+.contenedor-tabla {
+  width: 95%;
+  margin: 0 auto 50px;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+  word-break: break-word;
+}
+
+th, td {
+  border: 2px solid white;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: #b41212;
+}
+
+td {
+  background-color: #720909;
+}
+
+/* Botones de acción con enlaces */
+.btn-accion {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #7a0000;
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-accion:hover {
+  background-color: #ee0606;
+}
