@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
 
-    <title>EVENTEC</title>
-  </head>
-  <body>
-    <header>
-      <img src="imgs/logo.png" alt="Logo Tec San Pedro" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="imgs/icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>EVENTEC</title>
+</head>
+
+<body>
+  <header>
+    <img src="imgs/logo.png" alt="Logo Tec San Pedro">
+    <!-- Checkbox oculto -->
+    <input type="checkbox" id="menu-toggle">
+    <!-- Icono menú como label -->
+    <label for="menu-toggle" class="menu-icon">
       <i class="bi bi-list"></i>
-    </header>
+    </label>
 
-    <div class="inicio">
-      <h1>EVENTEC</h1>
-      <hr />
-      <h4>EVENTOS CULTURALES Y DEPORTIVOS</h4>
-      <a href="#">CALENDARIO</a>
+    <nav class="nav-links">
+      <a href="index.html"><i class="bi bi-house-door"></i>Inicio</a>
+      <a href="informacion.html"><i class="bi bi-info-circle"></i>Acerca De</a>
+    </nav>
+  </header>
 
-      <!-- Sección de tarjetas -->
+  <div class="inicio">
+    <h1>EVENTEC</h1>
+    <hr />
+    <h4>EVENTOS CULTURALES Y DEPORTIVOS</h4>
+    <a href="#">CALENDARIO</a>
+
+    <!-- Sección de tarjetas -->
+    <div class="tarjetas-categoria">
       <div class="card">
         <div class="blob"></div>
         <div class="bg" style="background-image: url(imgs/academicos.png);"></div>
@@ -42,40 +52,67 @@
         <div class="bg" style="background-image: url('imgs/deportivos.png');"></div>
         <div class="card-text">DEPORTIVOS</div>
       </div>
-
-      <div class="linea">
-        <hr />
-        <img src="imgs/icontec.png" />
-        <hr />
-      </div>
-
-      <!-- Slider lineal agregado aquí -->
-      <div class="slider-container">
-        <div class="slider-track">
-          <!-- Se duplican más palabras para que el efecto sea fluido y sin interrupciones -->
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-          <span class="slider-text">EVENTEC</span>
-        </div>
-      </div>
-      <!-- Fin del slider -->
-      
     </div>
-  </body>
+
+    <div class="linea">
+      <hr />
+      <img src="imgs/icontec.png" />
+      <hr />
+    </div>
+
+    <!-- Slider lineal agregado aquí -->
+    <div class="slider-container">
+      <div class="slider-track">
+        <!-- Se duplican más palabras para que el efecto sea fluido y sin interrupciones -->
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+
+      </div>
+    </div>
+    <div class="imagenes-carrusell">
+      IMAGENES
+    </div>
+    <div class="slider-container">
+      <div class="slider-track">
+        <!-- Se duplican más palabras para que el efecto sea fluido y sin interrupciones -->
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+        <span class="slider-text">TEC SAN PEDRO</span>
+        <span class="slider-text">EVENTEC</span>
+
+      </div>
+    </div>
+    <div class="seccion-eventos">
+
+    </div>
+    <div class="info-evento">
+
+    </div>
+    <footer>
+      <img src="imgs/logo.png" alt="Logo Tec San Pedro">
+      <div class="btn-social">
+        <a href="https://www.facebook.com/oficialtecsp" target="_blank"><i class="bi bi-facebook"></i>FACEBOOK</a>
+        <a href="https://www.instagram.com/leonestecsanpedro/" target="_blank"><i
+            class="bi bi-instagram"></i>INSTAGRAM</a>
+        <a href="https://www.tecsanpedro.edu.mx/" target="_blank"><i class="bi bi-globe2"></i>WEB</a>
+      </div>
+      <p>Copyright © 2025 Instituto Tecnológico Superior de San Pedro de las Colonias. <br>Todos los derechos
+        reservados.</p>
+             
+    </footer>
+  </div>
+</body>
+
 </html>
