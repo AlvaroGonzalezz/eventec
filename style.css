@@ -108,7 +108,7 @@ header i {
     margin-bottom: 15%;
 }
 
-.inicio a {
+.inicio .btn1 {
     text-decoration: none;
     color: white;
     border: solid 1px red;
@@ -122,8 +122,18 @@ header i {
 }
 
 /* Estilos de las tarjetas */
+
 .tarjetas-categoria {
     margin-top: 100px;
+}
+
+.tarjetas-categoria h2 {
+    color: white;
+    font-size: 40px;
+    font-family: "Anton", monospace;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 25%;
 }
 
 .card {
@@ -233,6 +243,268 @@ header i {
     100% {
         transform: translateX(-50%);
     }
+}
+
+/* Seccion de Eventos */
+
+.seccion-eventos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.seccion-eventos h2 {
+    color: white;
+    font-size: 40px;
+    font-family: "Anton", monospace;
+    letter-spacing: 2px;
+    font-weight: 500;
+    margin-bottom: 5%;
+}
+
+.ag-format-container {
+    width: 1142px;
+    margin: 0 auto;
+}
+
+
+.ag-courses_box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    text-decoration: none;
+
+    padding: 50px 0;
+}
+
+.ag-courses_item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+
+    margin: 0 15px 30px;
+
+    overflow: hidden;
+    text-decoration: none;
+
+    border-radius: 28px;
+}
+
+.ag-courses-item_link {
+    display: block;
+    padding: 30px 20px;
+    border: solid 1px red;
+    background-color: #950005;
+    text-decoration: none;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    -webkit-transform: scale(10);
+    -ms-transform: scale(10);
+    transform: scale(10);
+}
+
+.ag-courses-item_title {
+    min-height: 87px;
+    margin: 0 0 15px;
+
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+    text-decoration: none;
+
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_date-box {
+    font-size: 18px;
+    color: #FFF;
+    text-decoration: none;
+
+    z-index: 2;
+    position: relative;
+}
+
+.ag-courses-item_date {
+    font-weight: bold;
+    color: #fffcfc;
+    text-decoration: none;
+    -webkit-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease
+}
+
+.ag-courses-item_bg {
+    height: 118px;
+    width: 118px;
+    background-color: #0900005e;
+
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+
+    border-radius: 50%;
+
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+
+
+
+@media only screen and (max-width: 979px) {
+    .ag-courses_item {
+        -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+    }
+
+    .ag-courses-item_title {
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .ag-format-container {
+        width: 96%;
+    }
+
+}
+
+@media only screen and (max-width: 639px) {
+    .ag-courses_item {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .ag-courses-item_title {
+        min-height: 72px;
+        line-height: 1;
+
+        font-size: 24px;
+    }
+
+    .ag-courses-item_link {
+        padding: 22px 40px;
+    }
+
+    .ag-courses-item_date-box {
+        font-size: 16px;
+    }
+}
+
+/* Info del Evento */
+
+/* Contenedor del logo */
+.logo-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-container img {
+  background-size: cover;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 5px solid #880000;
+  box-shadow: 0 0 20px rgb(224, 10, 10);
+}
+
+/* Título principal */
+.title {
+  font-size: 30px;
+  margin: 20px 0 10px 0;
+  text-align: center;
+  color: white;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+}
+
+.informacion-titulo { 
+  font-size: 40px;
+  text-align: center;
+  color: white;
+  margin-top: 30px;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  font-weight: 300;
+  margin-bottom: 100px;
+}
+
+
+/* Descripción del evento */
+.descripcion-evento {
+  color: #ddd;
+  font-size: 1.2em;
+  text-align: center;
+  max-width: 700px;
+  margin: 10px auto 30px auto;
+  font-family: "JetBrains Mono", monospace;
+  line-height: 1.6;
+}
+
+/* Tabla */
+table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: rgba(90, 0, 0, 0.6); /* rojo oscuro translúcido */
+  color: white;
+  font-family: "JetBrains Mono", monospace;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+/* Estilo general para las celdas */
+td {
+  padding: 15px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+/* Primera columna con color */
+td:nth-child(1) {
+  background-color: rgba(228, 13, 13, 0.564); /* rojo oscuro translúcido */
+  color: white;
+}
+
+/* Segunda columna con otro color */
+td:nth-child(2) {
+  background-color: rgba(172, 60, 29, 0.6); 
+  color: white;
+}
+
+
+
+/* Primera columna en negrita */
+td:first-child {
+  font-weight: bold;
+  color: #f8dede; /* color suave, claro sobre fondo rojo */
 }
 
 /* FOOTER */
