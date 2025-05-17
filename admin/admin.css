@@ -96,7 +96,7 @@ table {
 }
 
 th, td {
-  border: 2px solid white;
+  border: 0.55px solid white;
   padding: 12px;
   text-align: center;
   vertical-align: middle;
@@ -127,3 +127,118 @@ td {
 .btn-accion:hover {
   background-color: #ee0606;
 }
+
+
+
+.form-nuevo-evento {
+  background-color: #7b0f0f;
+  padding: 30px;
+  border-radius: 25px;
+  width: 320px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+  margin: 40px auto;
+}
+
+.titulo-formulario {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.campo-form {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.campo-form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.campo-form i:first-child {
+  left: 16px;
+}
+
+.icono-derecha {
+  right: 12px;
+}
+
+.campo-form input,
+.campo-form select {
+  width: 100%;
+  height: 42px;
+  padding: 0 36px 0 44px;
+  border: none;
+  border-radius: 8px;
+  background-color: #a62424;
+  color: white;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  appearance: none;
+
+
+}
+
+/* Ocultar ícono en Chrome y Safari */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+/* Icono derecho igual que en categoría */
+.icono-derecha {
+  right: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Padding para input date  */
+input[type="date"] {
+  padding-left: 44px;
+  padding-right: 36px;
+  background-color: #a62424;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+
+
+
+.campo-form input::placeholder {
+  color: #eee;
+}
+
+.campo-form .campo-archivo {
+  padding: 8px 10px 8px 44px;
+  height: 42px;
+}
+
+.btn-registrar {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+  margin-top: 30px;
+}
+
+
