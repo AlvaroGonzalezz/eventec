@@ -234,6 +234,40 @@ header i {
     padding-right: 40px;
 }
 
+/* Slider Lineal con imágenes */
+.slider-container {
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15%;
+    height: 100px; /* Ajusta la altura según el tamaño de las imágenes */
+    display: flex;
+    align-items: center;
+}
+
+/* Configuración del carrusel */
+.slider-track {
+    display: flex;
+    gap: 40px;
+    animation: scroll 40s linear infinite;
+    white-space: nowrap;
+    width: fit-content;
+}
+
+/* Estilos de las imágenes */
+.slider-img {
+    height: 250px; /* Ajusta la altura de las imágenes */
+    border-radius: 10px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Animación infinita sin espacios vacíos */
+@keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
 /* Animación infinita sin espacios vacíos */
 @keyframes scroll {
     100% {
