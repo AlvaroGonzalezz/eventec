@@ -21,12 +21,14 @@ header img {
     width: 25%;
     margin-right: 85px;
 }
+
 /*MENU DEL HEADER*/
 
 header i {
     color: #fff;
     font-size: 50px;
 }
+
 #menu-toggle {
     display: none;
 }
@@ -40,10 +42,13 @@ header i {
     position: absolute;
     top: 90px;
     left: 0;
-    width: 100%; /* Ahora ocupa el 100% */
-    background-color: #750101;
-    padding: 15px 0; /* Sin padding lateral para que abarque todo */
-    border-radius: 0; /* Sin bordes redondeados */
+    width: 100%;
+    /* Ahora ocupa el 100% */
+    background-color: #a90000;
+    padding: 15px 0;
+    /* Sin padding lateral para que abarque todo */
+    border-radius: 0;
+    /* Sin bordes redondeados */
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s ease;
@@ -51,21 +56,24 @@ header i {
     font-family: "JetBrains Mono", Courier, monospace;
     
 }
+
 .nav-links i {
     color: #fff;
     font-size: 20px;
     margin-right: 10px;
 }
+
 /* Enlaces */
 .nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
     font-weight: bold;
+    font-family: "JetBrains Mono", Courier, monospace;
 }
 
 /* Cuando el checkbox está checked (menú abierto) */
-#menu-toggle:checked + .menu-icon + .nav-links {
+#menu-toggle:checked+.menu-icon+.nav-links {
     transform: scaleY(1);
 }
 
@@ -77,13 +85,19 @@ header i {
     padding-left: 2em;
     padding-right: 2em;
     padding-bottom: 0.4em;
-    background-color: #72060a;
+    background-color: #7b0f0f;
     border-radius: 25px;
     transition: .4s ease-in-out;
     width: 75%;
     margin: 0 auto;
     margin-top: 40%;
-
+    background-color: #7b0f0f;
+    padding: 30px;
+    border-radius: 25px;
+    width: 320px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+    margin: 40px auto;
 }
 
 .login .form:hover {
@@ -116,6 +130,7 @@ header i {
     height: 1.3em;
     width: 1.3em;
     fill: white;
+    
 }
 
 .input-field {
@@ -124,6 +139,8 @@ header i {
     outline: none;
     width: 100%;
     color: #f3f3f3;
+        font-family: "JetBrains Mono", Courier, monospace;
+
 }
 
 .input-field::placeholder {
@@ -150,7 +167,7 @@ header i {
     background-color: #fcfcfc;
     color: rgb(40, 40, 40) !important;
     font-family: "jetbrains-mono", monospace;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .button3:hover {
@@ -211,4 +228,119 @@ footer p {
     margin-top: 20px;
     font-size: 14px;
     color: #ddd;
+}
+
+
+/* Responsive o Vista para escritorio */
+@media (min-width: 1024px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 50px;
+        position: relative;
+        padding: 15px 0 15px 0;
+        width: 100%;
+    }
+
+    header img {
+        width: 150px;
+        margin: 0;
+        margin-left: 150px;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    .nav-links {
+        position: static;
+        transform: scaleY(1) !important;
+        flex-direction: row;
+        gap: 40px;
+        background: none;
+        padding: 0;
+        width: auto;
+        height: auto;
+        z-index: auto;
+        margin-right: 10%;
+    }
+
+    .nav-links a {
+        font-size: 18px;
+        background-color: #aa0606;
+        border-radius: 10px;
+        padding: 12px;
+        box-shadow: 0 0 10px #550000;
+    }
+
+    .nav-links a:hover {
+        background-color: #7a0000;
+    }
+
+    .login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        justify-content: center;
+        padding: 40px 0;
+    }
+
+    .login .form {
+        width: 400px;
+        padding: 2em;
+        margin: 0 auto;
+        margin-top: 0;
+        /* ya no necesitas 40% de margen superior */
+        border-radius: 20px;
+    }
+
+    .field {
+        padding: 0.8em;
+    }
+
+    .input-field {
+        font-size: 1em;
+    }
+
+    .button3 {
+        font-size: 1.1em;
+        padding: 0.6em;
+    }
+
+
+
+    .btn-social {
+        display: flex;
+        justify-content: center;
+        gap: 1.5em;
+        margin-top: 1em;
+        flex-wrap: wrap;
+    }
+
+    .btn-social a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.3em;
+    }
+
+    .btn-social a:hover {
+        color: #ffcccc;
+    }
+
+    footer {
+        margin-top: 10%;
+        margin-bottom: -20%;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px 0;
+        background-color: #00000048;
+    }
+
 }
