@@ -511,7 +511,7 @@ header i {
 }
 
 /* Tabla */
-table {
+.info-evento table {
     border-collapse: collapse;
     width: 90%;
     max-width: 500px;
@@ -527,21 +527,21 @@ table {
 }
 
 /* Estilo general para las celdas */
-td {
+.info-evento td {
     padding: 15px;
     text-align: left;
     border: 1px solid #ccc;
 }
 
 /* Primera columna con color */
-td:nth-child(1) {
+.info-evento td:nth-child(1) {
     background-color: rgba(228, 13, 13, 0.564);
     /* rojo oscuro translúcido */
     color: white;
 }
 
 /* Segunda columna con otro color */
-td:nth-child(2) {
+.info-evento td:nth-child(2) {
     background-color: rgba(172, 60, 29, 0.6);
     color: white;
 }
@@ -549,7 +549,7 @@ td:nth-child(2) {
 
 
 /* Primera columna en negrita */
-td:first-child {
+.info-eventotd:first-child {
     font-weight: bold;
     color: #f8dede;
     /* color suave, claro sobre fondo rojo */
@@ -609,6 +609,259 @@ footer p {
     margin-top: 20px;
     font-size: 14px;
     color: #ddd;
+}
+
+/* Estilos para el menú administrativo */
+
+.container-admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px !important;
+    width: 90%;
+    margin: 0 auto;
+    color: white;
+    font-family: "JetBrains Mono", monospace;
+}
+.titulo-admin {
+
+    font-size: 35px;
+    text-align: center;
+    color: white;
+    margin-top: 80px;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2.5px;
+    
+}
+
+.barra-superior {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+  padding: 0 30px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Botón de nuevo evento */
+.btn-nuevo {
+  margin-right: auto;
+  background-color: #b30000;
+  color: white;
+  font-weight: bold;
+  font-style: italic;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-nuevo:hover {
+  background-color: #eb0404;
+}
+
+.buscador {
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+  margin-left: auto;
+}
+
+.buscador label {
+  color: white;
+  font-size: 1rem;
+}
+
+.input-con-icono {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-con-icono i {
+  position: absolute;
+  right: 10px;
+  color: gray;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.caja-buscar {
+  padding: 7px 8px;
+  border-radius: 5px;
+}
+
+
+
+/* Tabla de eventos */
+.contenedor-tabla {
+  width: 95%;
+  margin: 0 auto 50px;
+  overflow-x: auto;
+}
+
+.contenedor-tabla table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+  word-break: break-word;
+}
+
+.contenedor-tabla th, td {
+  border: 0.55px solid white;
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.95rem;
+}
+
+.contenedor-tabla th {
+  background-color: #b41212;
+}
+
+.contenedor-tabla td {
+  background-color: #720909;
+}
+
+/* Botones de acción con enlaces */
+.btn-accion {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #7a0000;
+  padding: 6px 10px;
+  border-radius: 5px;
+  margin: 2px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.btn-accion:hover {
+  background-color: #ee0606;
+}
+
+
+
+.form-nuevo-evento {
+    margin-top: 20% !important;
+    margin-bottom: 20% !important;
+  background-color: #7b0f0f;
+  padding: 30px;
+  border-radius: 25px;
+  width: 320px;
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
+  margin: 40px auto;
+}
+
+.titulo-formulario {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.campo-form {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.campo-form i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+.campo-form i:first-child {
+  left: 16px;
+}
+
+.icono-derecha {
+  right: 12px;
+}
+
+.campo-form input,
+.campo-form select {
+  width: 100%;
+  height: 42px;
+  padding: 0 36px 0 44px;
+  border: none;
+  border-radius: 8px;
+  background-color: #a62424;
+  color: white;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  appearance: none;
+
+
+}
+
+/* Ocultar ícono en Chrome y Safari */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+/* Icono derecho igual que en categoría */
+.icono-derecha {
+  right: 12px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Padding para input date  */
+input[type="date"] {
+  padding-left: 44px;
+  padding-right: 36px;
+  background-color: #a62424;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+
+
+
+.campo-form input::placeholder {
+  color: #eee;
+}
+
+.campo-form .campo-archivo {
+  padding: 8px 10px 8px 44px;
+  height: 42px;
+}
+
+.btn-registrar {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 1rem;
+  cursor: pointer;
+  color: black;
+  margin-top: 30px;
 }
 
 /* Responsive o Vista para escritorio */
@@ -885,5 +1138,12 @@ footer p {
 
     ul li.today time {
         font-weight: 800;
+    }
+    .container-admin {
+        margin-top: 50px !important;
+        width: 90%;
+        margin: 0 auto;
+        color: white;
+        font-family: "JetBrains Mono", monospace;
     }
 }
