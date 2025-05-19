@@ -285,6 +285,9 @@ header i {
 }
 
 /* Seccion de Eventos */
+.calendario {
+    display: none;
+}
 
 .seccion-eventos {
     display: flex;
@@ -672,7 +675,8 @@ footer p {
         /* Recorta sin deformar */
         z-index: -1;
         /* Detrás del contenido */
-        filter: brightness(0.4);
+        /* filter: brightness(0.4); */
+        filter: blur(5px);
     }
 
     .inicio,
@@ -758,12 +762,128 @@ footer p {
     .seccion-eventos h2 {
         font-size: 60px;
         margin-top: 5%;
-        margin-bottom: 5%;
+        margin-bottom: 0%;
+    }
+    
+    .filtro-container {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px;
+      border-radius: 15px;
+      width: fit-content;
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+    .filtro-container select,
+    .filtro-container input {
+      border: none;
+      outline: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      background: transparent;
+      color: #000a2d;
+      cursor: pointer;
+      font-family: "JetBrains Mono", monospace;
+    }
+
+    .filtro-container select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23a50000' height='16' viewBox='0 0 24 24' width='16' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 12px;
+      padding-right: 25px;
+    }
+
+    .filtro-container input[type="text"] {
+      cursor: text;
+    }
+
+    .divider {
+      width: 1px;
+      height: 30px;
+      background-color: #ccc;
+      margin: 0 5px;
+    }
+
+    .filtro-container button {
+      background-color: #8a1c0b;
+      border: none;
+      border-radius: 50%;
+      padding: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+    }
+
+    .filtro-container button i {
+      color: white;
+      font-size: 18px;
+    }
     .informacion-titulo {
         font-size: 60px;
-        margin-top: 50px;
+        margin-top: 150px;
         margin-bottom: 50px;
+    }
+
+    .calendario {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .calendario h2 {
+        color: white;
+        font-size: 60px;
+        font-family: "Anton", monospace;
+        letter-spacing: 2px;
+        font-weight: 500;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        margin-bottom: 5%;
+    }
+    ul {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    ul li {
+        display: flex;
+        width: 10rem;
+        height: 10rem;
+        margin: 0.25rem;
+        flex-flow: column;
+        border-radius: 0.2rem;
+        padding: 1rem;
+        font-weight: 300;
+        font-size: 0.8rem;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.25);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    ul li time {
+        font-size: 2rem;
+        margin: 0 0 1rem 0;
+        font-weight: 500;
+    }
+
+    ul li.today {
+        background: #ffffff70;
+    }
+
+    ul li.today time {
+        font-weight: 800;
     }
 }

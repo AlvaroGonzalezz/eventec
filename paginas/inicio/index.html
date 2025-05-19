@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="../../recursos/imgs/icon.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="../../recursos/imgs/icontec.png" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="../../recursos/css/style.css" />
 
@@ -108,6 +108,44 @@
     </div>
     <div class="seccion-eventos" id="eventos">
       <h2>EVENTOS</h2>
+      <div class="barra-filtro">
+        <div class="filtro-container">
+          <select>
+            <option disabled selected>CATEGORÍA</option>
+            <option>ACADÉMICOS</option>
+            <option>CULTURALES</option>
+            <option>DEPORTIVOS</option>
+
+          </select>
+
+          <div class="divider"></div>
+
+          <select>
+            <option disabled selected>MES</option>
+            <option>ENERO</option>
+            <option>FEBRERO</option>
+            <option>MARZO</option>
+            <option>ABRIL</option>
+            <option>MAYO</option>
+            <option>JUNIO</option>
+            <option>JULIO</option>
+            <option>AGOSTO</option>
+            <option>SEPTIEMBRE</option>
+            <option>OCTUBRE</option>
+            <option>NOVIEMBRE</option>
+            <option>DICIEMBRE</option>
+
+          </select>
+
+          <div class="divider"></div>
+
+          <input type="text" placeholder="BUSCAR" />
+
+          <button type="submit">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
       <div class="ag-format-container">
         <div class="ag-courses_box">
           <div class="ag-courses_item">
@@ -196,6 +234,41 @@
 
         </div>
       </div>
+    </div>
+    <div class="calendario">
+      <!-- days sourced from: https://nationaldaycalendar.com/february/ -->
+      <h2>CALENDARIO</h2>
+      <!-- <h4>Encuentra todos los eventos del mes actual</h4> -->
+      <ul>
+        <li><time datetime="2022-02-01">1</time>Ningun Evento</li>
+        <li><time datetime="2022-02-02">2</time>Hackaton MTY 2025</li>
+        <li><time datetime="2022-02-03">3</time>Carrot Cake Day</li>
+        <li><time datetime="2022-02-04">4</time>Wear Red Day</li>
+        <li><time datetime="2022-02-05">5</time>Weatherperson's Day</li>
+        <li><time datetime="2022-02-06">6</time>Chopsticks Day</li>
+        <li><time datetime="2022-02-07">7</time>Periodic Table Day</li>
+        <li><time datetime="2022-02-08">8</time>Kite Flying Day</li>
+        <li><time datetime="2022-02-09">9</time>Pizza Day</li>
+        <li><time datetime="2022-02-10">10</time>Umbrella Day</li>
+        <li><time datetime="2022-02-11">11</time>Inventor's Day</li>
+        <li><time datetime="2022-02-12">12</time>Global Movie Day</li>
+        <li><time datetime="2022-02-13">13</time>Tortellini Day</li>
+        <li><time datetime="2022-02-14">14</time>Valentine's Day</li>
+        <li><time datetime="2022-02-15">15</time>Gumdrop Day</li>
+        <li><time datetime="2022-02-16">16</time>Do a Grouch a Favor Day</li>
+        <li><time datetime="2022-02-17">17</time>Cabbage Day</li>
+        <li><time datetime="2022-02-18">18</time>Battery Day</li>
+        <li class="today"><time datetime="2022-02-19">19</time>Chocolate Mint Day</li>
+        <li><time datetime="2022-02-20">20</time>Love Your Pet Day</li>
+        <li><time datetime="2022-02-21">21</time>President's Day</li>
+        <li><time datetime="2022-02-22">22</time>Cook a Sweet Potato Day</li>
+        <li><time datetime="2022-02-23">23</time>Tile Day</li>
+        <li><time datetime="2022-02-24">24</time>Toast Day</li>
+        <li><time datetime="2022-02-25">25</time>Clam Chowder Day</li>
+        <li><time datetime="2022-02-26">26</time>Pistachio Day</li>
+        <li><time datetime="2022-02-27">27</time>Polar Bear Day</li>
+        <li><time datetime="2022-02-28">28</time>Tooth Fairy Day</li>
+      </ul>
     </div>
     <div class="info-evento">
       <!--Seccion de mas informacion-->
