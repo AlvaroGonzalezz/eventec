@@ -221,7 +221,7 @@ header i {
 .slider-track {
     display: flex;
     gap: 40px;
-    animation: scroll 10s linear infinite;
+    animation: scroll 0.5s linear infinite;
     white-space: nowrap;
     width: fit-content;
 }
