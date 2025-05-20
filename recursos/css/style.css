@@ -1026,8 +1026,8 @@ input[type="date"] {
         /* Recorta sin deformar */
         z-index: -1;
         /* Detrás del contenido */
-        /* filter: brightness(0.4); */
-        filter: blur(5px);
+        filter: brightness(0.4);
+        /* filter: blur(5px); */
     }
 
     .inicio,
