@@ -257,10 +257,11 @@ header i {
     align-items: center;
 }
 
+
 .slider-track {
     display: flex;
     gap: 40px;
-    animation: scroll 10s linear infinite;
+    animation: scroll 40s linear infinite;
     white-space: nowrap;
     width: fit-content;
 }
@@ -273,16 +274,45 @@ header i {
     padding-right: 40px;
 }
 
+/* Estilos de las imágenes */
+.slider-img {
+    height: 250px; /* Ajusta la altura de las imágenes */
+    border-radius: 10px;
+    width: auto;
+    object-fit: contain;
+    margin-top: .7%;
+    box-shadow: 0 0 10px rgba(30, 0, 0, 0.5);
+    filter: brightness(0.8);
+}
+
 /* Animación infinita sin espacios vacíos */
 @keyframes scroll {
-    100% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
 }
+
+.carrusel {
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+.slider-track-img {
+  display: flex;
+  animation: scroll-img 40s linear infinite;
+  width: fit-content;
+  gap: 40px;
+}
+
+@keyframes scroll-img {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
 
 /* Seccion de Eventos */
 .calendario {
