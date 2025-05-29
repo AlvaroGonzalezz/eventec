@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-05-2025 a las 04:57:28
+-- Tiempo de generación: 29-05-2025 a las 07:25:33
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,36 +34,12 @@ CREATE TABLE `administrador` (
   `contraseña` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `categoria`
+-- Volcado de datos para la tabla `administrador`
 --
 
-CREATE TABLE `categoria` (
-  `id_categoria` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `evento`
---
-
-CREATE TABLE `evento` (
-  `id_evento` int(11) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` text DEFAULT NULL,
-  `fecha` datetime NOT NULL,
-  `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp(),
-  `ubicacion` varchar(255) NOT NULL,
-  `organizador` varchar(150) NOT NULL,
-  `estatus` tinyint(4) NOT NULL DEFAULT 1,
-  `id_categoria` int(11) DEFAULT NULL,
-  `id_administrador` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `administrador` (`id_administrador`, `nombre`, `email`, `contraseña`) VALUES
+(1, 'Alvaro', 'alvaro@tecsanpedro.edu.mx', '$2y$10$rAEgIdh.1U6uh5iudYMuX.w1R.3yYtcZl0uWEH4MNzX9sbp3BsehW');
 
 --
 -- Índices para tablas volcadas
@@ -77,20 +53,6 @@ ALTER TABLE `administrador`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indices de la tabla `categoria`
---
-ALTER TABLE `categoria`
-  ADD PRIMARY KEY (`id_categoria`);
-
---
--- Indices de la tabla `evento`
---
-ALTER TABLE `evento`
-  ADD PRIMARY KEY (`id_evento`),
-  ADD KEY `id_categoria` (`id_categoria`),
-  ADD KEY `id_administrador` (`id_administrador`);
-
---
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -98,30 +60,7 @@ ALTER TABLE `evento`
 -- AUTO_INCREMENT de la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `categoria`
---
-ALTER TABLE `categoria`
-  MODIFY `id_categoria` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `evento`
---
-ALTER TABLE `evento`
-  MODIFY `id_evento` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `evento`
---
-ALTER TABLE `evento`
-  ADD CONSTRAINT `evento_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`id_categoria`),
-  ADD CONSTRAINT `evento_ibfk_2` FOREIGN KEY (`id_administrador`) REFERENCES `administrador` (`id_administrador`);
+  MODIFY `id_administrador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
