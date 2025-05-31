@@ -152,6 +152,7 @@ $resultado = $conexion->query($sql);
 
             <select name="categoria">
               <option value="" disabled selected>CATEGORÍA</option>
+              <option value="">TODOS</option>
               <option value="1">ACADÉMICOS</option>
               <option value="2">DEPORTIVOS</option>
               <option value="3">CULTURALES</option>
@@ -162,6 +163,7 @@ $resultado = $conexion->query($sql);
 
             <select name="mes">
               <option value="" disabled selected>MES</option>
+              <option value="">TODOS</option>
               <option value="01">ENERO</option>
               <option value="02">FEBRERO</option>
               <option value="03">MARZO</option>
@@ -213,7 +215,6 @@ $resultado = $conexion->query($sql);
                   data-nombre="<?= htmlspecialchars($evento['nombre']) ?>"
                   data-fecha="<?= $fechaFormateada ?>"
                   data-hora="<?= $horaFormateada ?>"
-
                   data-ubicacion="<?= htmlspecialchars($evento['ubicacion']) ?>"
                   data-organizador="<?= htmlspecialchars($evento['organizador']) ?>"
                   data-categoria="<?= $categoriaNombre ?>"
@@ -385,11 +386,51 @@ $resultado = $conexion->query($sql);
       .then(res => res.text())
       .then(html => {
         document.querySelector('.ag-courses_box').innerHTML = html;
+        asignarEventosCards(); // vuelve a asignar eventos a los nuevos elementos
       })
       .catch(err => {
         console.error('Error al cargar eventos filtrados:', err);
       });
+
   });
+
+  function asignarEventosCards() {
+    document.querySelectorAll('.ag-courses-item_link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        // Extraer los datos
+        const nombre = this.dataset.nombre;
+        const fecha = this.dataset.fecha;
+        const hora = this.dataset.hora;
+        const ubicacion = this.dataset.ubicacion;
+        const organizador = this.dataset.organizador;
+        const categoria = this.dataset.categoria;
+        const imagen = this.dataset.imagen;
+
+        // Insertar los datos en la sección #info-evento
+        document.querySelector('#info-evento .title').textContent = nombre;
+        document.querySelector('#info-evento .descripcion-evento').textContent = 'Información sobre el evento.';
+        document.querySelector('#info-evento img').src = imagen;
+        const tabla = document.querySelector('#info-evento table');
+        tabla.innerHTML = `
+        <tr><td>Evento:</td><td>${nombre}</td></tr>
+        <tr><td>Fecha:</td><td>${fecha}</td></tr>
+        <tr><td>Hora:</td><td>${hora}</td></tr>
+        <tr><td>Ubicación:</td><td>${ubicacion}</td></tr>
+        <tr><td>Organizador:</td><td>${organizador}</td></tr>
+        <tr><td>Categoría:</td><td>${categoria}</td></tr>
+      `;
+
+        // Mostrar la sección
+        document.getElementById('info-evento').style.display = 'block';
+        // Desplazar a la sección
+        document.getElementById('info-evento').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  }
 </script>
 
 </html>
