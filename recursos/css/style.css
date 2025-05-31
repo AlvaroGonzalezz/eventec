@@ -391,6 +391,7 @@ header i {
     flex-basis: calc(33.33333% - 30px);
 
     margin: 0 15px 30px;
+  z-index: -10;         /* un valor menor */
 
     overflow: hidden;
     text-decoration: none;
@@ -479,6 +480,7 @@ header i {
     .ag-courses_item {
         -ms-flex-preferred-size: calc(50% - 30px);
         flex-basis: calc(50% - 30px);
+        z-index: -10; /* un valor menor */
     }
 
     .ag-courses-item_title {
@@ -497,6 +499,7 @@ header i {
     .ag-courses_item {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+        z-index: -10; /* un valor menor */
     }
 
     .ag-courses-item_title {
@@ -1430,7 +1433,19 @@ input[type="date"] {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         margin-bottom: 5%;
     }
-
+    .calendario ul li {
+        color: white;
+        z-index: -100;
+    }
+    .calendario .evento-existe {
+        color: #fefefe;
+        font-weight: bold;
+        font-size: 1rem;
+        background: #340c0c;
+        border-radius: 10px;
+        padding: 5px;
+        z-index: 200000 !important;
+    }
     ul {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -1443,20 +1458,29 @@ input[type="date"] {
     ul li {
         display: flex;
         width: 10rem;
-        height: 10rem;
+        height: auto;
         margin: 0.25rem;
         flex-flow: column;
         border-radius: 0.2rem;
         padding: 1rem;
         font-weight: 300;
         font-size: 0.8rem;
+        font-family: "JetBrains Mono", monospace;
         box-sizing: border-box;
-        background: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        background: #950005c3;
+        box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 0, 0, 0.375);
+    }
+    ul li:hover {
+        background: #690000c3;
+        box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 0, 0, 0.375);
     }
 
     ul li time {

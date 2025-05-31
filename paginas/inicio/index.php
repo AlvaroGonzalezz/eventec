@@ -4,6 +4,30 @@ include '../../paginas/conexion/conexion.php';
 $sql = "SELECT id_evento, nombre, fecha, ubicacion, organizador, id_categoria, imagen FROM evento";
 $resultado = $conexion->query($sql);
 
+date_default_timezone_set('America/Mexico_City');
+$anioActual = date("Y");
+$mesActual = 6;
+
+// Traemos eventos del mes actual
+$sql2 = "SELECT fecha, nombre FROM evento WHERE YEAR(fecha) = $anioActual AND MONTH(fecha) = $mesActual ORDER BY fecha";
+$resultado2 = $conexion->query($sql2);
+
+$eventosPorDia = [];
+
+if ($resultado2 && $resultado2->num_rows > 0) {
+  while ($evento = $resultado2->fetch_assoc()) {
+    $fechaEvento = strtotime($evento['fecha']);
+    $diaEvento = intval(date('d', $fechaEvento));
+    $mesEvento = intval(date('m', $fechaEvento));
+    $anioEvento = intval(date('Y', $fechaEvento));
+
+    if ($mesEvento == $mesActual && $anioEvento == $anioActual) {
+      // Guarda los eventos en un array asociativo por día
+      $eventosPorDia[$diaEvento][] = $evento['nombre'];
+    }
+  }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -191,11 +215,6 @@ $resultado = $conexion->query($sql);
         </div>
       </form>
 
-
-
-
-
-
       <div class="ag-format-container">
         <div class="ag-courses_box">
           <?php if ($resultado->num_rows > 0): ?>
@@ -239,40 +258,30 @@ $resultado = $conexion->query($sql);
       </div>
     </div>
     <div class="calendario">
-      <!-- days sourced from: https://nationaldaycalendar.com/february/ -->
       <h2>CALENDARIO</h2>
-      <!-- <h4>Encuentra todos los eventos del mes actual</h4> -->
       <ul>
-        <li><time datetime="2022-02-01">1</time>Ningun Evento</li>
-        <li><time datetime="2022-02-02">2</time>Hackaton MTY 2025</li>
-        <li><time datetime="2022-02-03">3</time>Carrot Cake Day</li>
-        <li><time datetime="2022-02-04">4</time>Wear Red Day</li>
-        <li><time datetime="2022-02-05">5</time>Weatherperson's Day</li>
-        <li><time datetime="2022-02-06">6</time>Chopsticks Day</li>
-        <li><time datetime="2022-02-07">7</time>Periodic Table Day</li>
-        <li><time datetime="2022-02-08">8</time>Kite Flying Day</li>
-        <li><time datetime="2022-02-09">9</time>Pizza Day</li>
-        <li><time datetime="2022-02-10">10</time>Umbrella Day</li>
-        <li><time datetime="2022-02-11">11</time>Inventor's Day</li>
-        <li><time datetime="2022-02-12">12</time>Global Movie Day</li>
-        <li><time datetime="2022-02-13">13</time>Tortellini Day</li>
-        <li><time datetime="2022-02-14">14</time>Valentine's Day</li>
-        <li><time datetime="2022-02-15">15</time>Gumdrop Day</li>
-        <li><time datetime="2022-02-16">16</time>Do a Grouch a Favor Day</li>
-        <li><time datetime="2022-02-17">17</time>Cabbage Day</li>
-        <li><time datetime="2022-02-18">18</time>Battery Day</li>
-        <li class="today"><time datetime="2022-02-19">19</time>Chocolate Mint Day</li>
-        <li><time datetime="2022-02-20">20</time>Love Your Pet Day</li>
-        <li><time datetime="2022-02-21">21</time>President's Day</li>
-        <li><time datetime="2022-02-22">22</time>Cook a Sweet Potato Day</li>
-        <li><time datetime="2022-02-23">23</time>Tile Day</li>
-        <li><time datetime="2022-02-24">24</time>Toast Day</li>
-        <li><time datetime="2022-02-25">25</time>Clam Chowder Day</li>
-        <li><time datetime="2022-02-26">26</time>Pistachio Day</li>
-        <li><time datetime="2022-02-27">27</time>Polar Bear Day</li>
-        <li><time datetime="2022-02-28">28</time>Tooth Fairy Day</li>
+        <?php
+        $diasDelMes = cal_days_in_month(CAL_GREGORIAN, $mesActual, $anioActual);
+
+        for ($dia = 1; $dia <= $diasDelMes; $dia++) {
+          $fechaISO = sprintf('%04d-%02d-%02d', $anioActual, $mesActual, $dia);
+          echo '<li><time datetime="' . $fechaISO . '">' . $dia . '</time>';
+
+          if (isset($eventosPorDia[$dia])) {
+            foreach ($eventosPorDia[$dia] as $eventoNombre) {
+              echo '<div class="evento-existe">' . htmlspecialchars($eventoNombre) . '</div><br>';
+            }
+          } else {
+            echo 'Ningún Evento';
+          }
+
+          echo '</li>';
+        }
+        ?>
       </ul>
+
     </div>
+
     <div id="info-evento" class="info-evento" style="display:none;">
       <!--Seccion de mas informacion-->
       <!-- Título superior -->
