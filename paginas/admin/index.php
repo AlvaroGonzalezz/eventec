@@ -52,7 +52,7 @@ $resultado = $conexion->query($sql);
     </label>
 
     <nav class="nav-links">
-      <a href="../inicio/index.html"><i class="bi bi-house-door"></i>Inicio</a>
+      <a href="../inicio/index.php"><i class="bi bi-house-door"></i>Inicio</a>
       <a href="../acerca-de/index.html"><i class="bi bi-info-circle"></i>Acerca De</a>
       <a href="#" id="logout-link"><i class="bi bi-box-arrow-right"></i>Cerrar Sesión</a>
 

@@ -326,6 +326,24 @@ header i {
 
 
 /* Seccion de Eventos */
+.btnRegresar {
+    margin-top: 5%;
+}
+.btnRegresar a{
+    text-decoration: none;
+    color: white;
+    border: solid 1px red;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #950005;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-family: "JetBrains Mono", monospace;
+}
+.btnRegresar a:hover {
+    background-color: #640000;
+}
 .calendario {
     display: none;
 }
@@ -1073,7 +1091,12 @@ input[type="date"] {
     height: 60%;
     margin: 0.3rem;
 }
-
+.slider-img2 {
+    border-radius: 10px;
+    width: auto;
+    object-fit: contain;
+    height: 40px;
+}
 .preguntas {
     display: flex !important;
     margin: 0 auto !important;
@@ -1160,6 +1183,7 @@ input[type="date"] {
     width: auto;
     object-fit: contain;
 }
+
 
 /* Alertas */
 

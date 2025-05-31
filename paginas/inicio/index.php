@@ -1,3 +1,10 @@
+<?php
+include '../../paginas/conexion/conexion.php';
+
+$sql = "SELECT id_evento, nombre, fecha, ubicacion, organizador, id_categoria, imagen FROM evento";
+$resultado = $conexion->query($sql);
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -27,7 +34,7 @@
       </label>
 
       <nav class="nav-links">
-        <a href="../inicio/index.html"><i class="bi bi-house-door"></i>Inicio</a>
+        <a href="../inicio/index.php"><i class="bi bi-house-door"></i>Inicio</a>
         <a href="../acerca-de/index.html"><i class="bi bi-info-circle"></i>Acerca De</a>
         <a href="../login/index.html"><i class="bi bi-person-fill"></i></i>Iniciar Sesión</a>
       </nav>
@@ -179,90 +186,44 @@
       </div>
       <div class="ag-format-container">
         <div class="ag-courses_box">
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
+          <?php if ($resultado->num_rows > 0): ?>
+            <?php while ($evento = $resultado->fetch_assoc()):
+              $fechaOriginal = $evento['fecha']; // por ejemplo: 2025-06-08 10:00:00
+              $fechaFormateada = date("d.m.Y", strtotime($fechaOriginal));
+              $horaFormateada = date("h:i A", strtotime($fechaOriginal));
+              $categorias = [
+                1 => "Académico",
+                2 => "Deportivo",
+                3 => "Social"
+              ];
+              $categoriaNombre = $categorias[$evento['id_categoria']] ?? "Sin categoría";
+            ?>
+              <div class="ag-courses_item">
+                <a href="#info-evento" class="ag-courses-item_link"
+                  data-nombre="<?= htmlspecialchars($evento['nombre']) ?>"
+                  data-fecha="<?= $fechaFormateada ?>"
+                  data-hora="<?= $horaFormateada ?>"
 
-              <div class="ag-courses-item_title">
-                Hackathon Monterrey 2025
+                  data-ubicacion="<?= htmlspecialchars($evento['ubicacion']) ?>"
+                  data-organizador="<?= htmlspecialchars($evento['organizador']) ?>"
+                  data-categoria="<?= $categoriaNombre ?>"
+                  data-imagen="<?= htmlspecialchars($evento['imagen']) ?>">
+                  <div class="ag-courses-item_bg"></div>
+                  <div class="ag-courses-item_title">
+                    <?= htmlspecialchars($evento['nombre']) ?>
+                  </div>
+                  <div class="ag-courses-item_date-box">
+                    Fecha:
+                    <span class="ag-courses-item_date">
+                      <?= date("d.m.Y", strtotime($evento['fecha'])) ?>
+                    </span>
+                  </div>
+                </a>
               </div>
-
-              <div class="ag-courses-item_date-box">
-                Fecha:
-                <span class="ag-courses-item_date">
-                  04.11.2025
-                </span>
-              </div>
-            </a>
-          </div>
-
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-
-              <div class="ag-courses-item_title">
-                Convocatoria InnovaTecnm 2025
-              </div>
-
-              <div class="ag-courses-item_date-box">
-                Fecha:
-                <span class="ag-courses-item_date">
-                  04.11.2025
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-
-              <div class="ag-courses-item_title">
-                Convocatoria InnovaTecnm 2025
-              </div>
-
-              <div class="ag-courses-item_date-box">
-                Fecha:
-                <span class="ag-courses-item_date">
-                  04.11.2025
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-
-              <div class="ag-courses-item_title">
-                Convocatoria InnovaTecnm 2025
-              </div>
-
-              <div class="ag-courses-item_date-box">
-                Fecha:
-                <span class="ag-courses-item_date">
-                  04.11.2025
-                </span>
-              </div>
-            </a>
-          </div>
-          <div class="ag-courses_item">
-            <a href="#" class="ag-courses-item_link">
-              <div class="ag-courses-item_bg"></div>
-
-              <div class="ag-courses-item_title">
-                Convocatoria InnovaTecnm 2025
-              </div>
-
-              <div class="ag-courses-item_date-box">
-                Fecha:
-                <span class="ag-courses-item_date">
-                  04.11.2025
-                </span>
-              </div>
-            </a>
-          </div>
-
-
-
+            <?php endwhile; ?>
+          <?php else: ?>
+            <p style="color: #fff;">No hay eventos registrados.</p>
+          <?php endif; ?>
         </div>
       </div>
     </div>
@@ -301,7 +262,7 @@
         <li><time datetime="2022-02-28">28</time>Tooth Fairy Day</li>
       </ul>
     </div>
-    <div class="info-evento">
+    <div id="info-evento" class="info-evento" style="display:none;">
       <!--Seccion de mas informacion-->
       <!-- Título superior -->
       <h2 class="informacion-titulo">Información del Evento</h2>
@@ -347,8 +308,11 @@
         </tr>
           
       </table>
-    </div>
 
+    </div>
+    <div class="btnRegresar">
+      <a href="#eventos">Regresar a Eventos</a>
+    </div>
     <footer>
       <img src="../../recursos/imgs/logo.png" alt="Logo Tec San Pedro">
       <div class="btn-social">
@@ -363,5 +327,43 @@
     </footer>
   </div>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.ag-courses-item_link');
+
+    links.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+
+        const nombre = link.dataset.nombre;
+        const fecha = link.dataset.fecha;
+        const hora = link.dataset.hora;
+        const ubicacion = link.dataset.ubicacion;
+        const organizador = link.dataset.organizador;
+        const categoria = link.dataset.categoria;
+        const imagen = link.dataset.imagen;
+
+        // Mostrar info
+        document.querySelector('.info-evento .title').textContent = nombre;
+        document.querySelector('.info-evento table').innerHTML = `
+        <tr><td>Evento:</td><td>${nombre}</td></tr>
+        <tr><td>Fecha:</td><td>${fecha}</td></tr>
+        <tr><td>Hora:</td><td>${hora}</td></tr>
+        <tr><td>Ubicación:</td><td>${ubicacion}</td></tr>
+        <tr><td>Organizador:</td><td>${organizador}</td></tr>
+        <tr><td>Categoría:</td><td>${categoria}</td></tr>
+      `;
+        document.querySelector('.logo-container img').src = imagen;
+
+        document.getElementById('info-evento').style.display = 'block';
+
+        // Scroll hacia abajo
+        document.getElementById('info-evento').scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
+</script>
 
 </html>
