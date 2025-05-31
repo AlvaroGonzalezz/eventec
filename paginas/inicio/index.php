@@ -146,44 +146,54 @@ $resultado = $conexion->query($sql);
     </div>
     <div class="seccion-eventos" id="eventos">
       <h2>EVENTOS</h2>
-      <div class="barra-filtro">
-        <div class="filtro-container">
-          <select>
-            <option disabled selected>CATEGORÍA</option>
-            <option>ACADÉMICOS</option>
-            <option>CULTURALES</option>
-            <option>DEPORTIVOS</option>
+      <form id="form-filtro">
+        <div class="barra-filtro">
+          <div class="filtro-container">
 
-          </select>
+            <select name="categoria">
+              <option value="" disabled selected>CATEGORÍA</option>
+              <option value="1">ACADÉMICOS</option>
+              <option value="2">DEPORTIVOS</option>
+              <option value="3">CULTURALES</option>
 
-          <div class="divider"></div>
+            </select>
 
-          <select>
-            <option disabled selected>MES</option>
-            <option>ENERO</option>
-            <option>FEBRERO</option>
-            <option>MARZO</option>
-            <option>ABRIL</option>
-            <option>MAYO</option>
-            <option>JUNIO</option>
-            <option>JULIO</option>
-            <option>AGOSTO</option>
-            <option>SEPTIEMBRE</option>
-            <option>OCTUBRE</option>
-            <option>NOVIEMBRE</option>
-            <option>DICIEMBRE</option>
+            <div class="divider"></div>
 
-          </select>
+            <select name="mes">
+              <option value="" disabled selected>MES</option>
+              <option value="01">ENERO</option>
+              <option value="02">FEBRERO</option>
+              <option value="03">MARZO</option>
+              <option value="04">ABRIL</option>
+              <option value="05">MAYO</option>
+              <option value="06">JUNIO</option>
+              <option value="07">JULIO</option>
+              <option value="08">AGOSTO</option>
+              <option value="09">SEPTIEMBRE</option>
+              <option value="10">OCTUBRE</option>
+              <option value="11">NOVIEMBRE</option>
 
-          <div class="divider"></div>
+              <option value="12">DICIEMBRE</option>
+            </select>
 
-          <input type="text" placeholder="BUSCAR" />
+            <div class="divider"></div>
 
-          <button type="submit">
-            <i class="bi bi-search"></i>
-          </button>
+            <input type="text" name="buscar" placeholder="BUSCAR" />
+
+            <button type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+
+          </div>
         </div>
-      </div>
+      </form>
+
+
+
+
+
+
       <div class="ag-format-container">
         <div class="ag-courses_box">
           <?php if ($resultado->num_rows > 0): ?>
@@ -363,6 +373,22 @@ $resultado = $conexion->query($sql);
         });
       });
     });
+  });
+  document.getElementById('form-filtro').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+    const params = new URLSearchParams(formData).toString();
+
+    fetch('filtrar.php?' + params)
+      .then(res => res.text())
+      .then(html => {
+        document.querySelector('.ag-courses_box').innerHTML = html;
+      })
+      .catch(err => {
+        console.error('Error al cargar eventos filtrados:', err);
+      });
   });
 </script>
 
