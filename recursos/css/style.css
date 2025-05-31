@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-
+    scroll-behavior: smooth;
 }
 
 body {
@@ -599,7 +599,7 @@ header i {
 /* FOOTER */
 
 footer {
-    width: 98vw;
+    width: 99vw;
     background-color: #00000048;
     margin-top: 10%;
     padding-top: 40px;
@@ -654,6 +654,28 @@ footer p {
 
 /* Estilos para el menú administrativo */
 
+.modal-dialog {
+    margin-top: 20% !important;
+}
+
+.btn-primary {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.btn-primary:hover {
+    background-color: #eb0404;
+}
+
 .container-admin {
     display: flex;
     flex-direction: column;
@@ -671,7 +693,7 @@ footer p {
     font-size: 35px;
     text-align: center;
     color: white;
-    margin-top: 80px;
+    margin-top: 30px;
     font-family: "Anton", sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -709,6 +731,11 @@ footer p {
 .btn-nuevo:hover {
     background-color: #eb0404;
 }
+
+
+
+/* Buscador */
+
 
 .buscador {
     display: flex;
@@ -760,11 +787,12 @@ footer p {
 
 .contenedor-tabla th,
 td {
-    border: 0.55px solid white;
+    border: 0.35px solid rgb(255, 70, 70);
     padding: 12px;
     text-align: center;
     vertical-align: middle;
     font-size: 0.95rem;
+    color: white;
 }
 
 .contenedor-tabla th {
@@ -795,12 +823,12 @@ td {
 
 
 .form-nuevo-evento {
-    margin-top: 20% !important;
-    margin-bottom: 20% !important;
+    margin-top: 13% !important;
+    margin-bottom: 5% !important;
     background-color: #7b0f0f;
     padding: 30px;
     border-radius: 25px;
-    width: 320px;
+    width: 420px;
     color: white;
     box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
     margin: 40px auto;
@@ -811,6 +839,8 @@ td {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 25px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
 }
 
 .campo-form {
@@ -825,6 +855,7 @@ td {
     color: white;
     font-size: 1rem;
     pointer-events: none;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .campo-form i:first-child {
@@ -905,6 +936,12 @@ input[type="date"] {
     cursor: pointer;
     color: black;
     margin-top: 30px;
+}
+
+.btn-registrar:hover {
+    background-color: #940000;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 /* Login */
@@ -1042,7 +1079,7 @@ input[type="date"] {
     margin: 0 auto !important;
     justify-content: center;
     margin-top: 3% !important;
-    
+
 }
 
 .header {
@@ -1082,6 +1119,7 @@ input[type="date"] {
     font-size: 1.5rem;
     font-weight: 300;
 }
+
 .message {
     color: rgb(0, 0, 0);
     font-family: 'JetBrains Mono', monospace;
@@ -1118,12 +1156,20 @@ input[type="date"] {
 }
 
 .slider-img {
-    height: 40px;
     border-radius: 10px;
     width: auto;
     object-fit: contain;
 }
 
+/* Alertas */
+
+.swal2-confirm {
+    background: #b30000 !important;
+}
+
+.swal2-confirm:hover {
+    background: rgb(74, 16, 11) !important;
+}
 
 /* Responsive o Vista para escritorio */
 @media (min-width: 1024px) {
@@ -1413,5 +1459,9 @@ input[type="date"] {
 
     .login .form {
         margin-top: 5% !important;
+    }
+
+    .modal-dialog {
+        margin-top: 10% !important;
     }
 }
