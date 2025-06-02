@@ -168,11 +168,17 @@ header i {
     font-family: "Anton", monospace;
     letter-spacing: 2px;
     font-weight: 500;
-    margin-bottom: 25%;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
 }
-
+.tarjetas-categoria p{
+    color: white;
+    font-size: 20px;
+    font-family: "JetBrains Mono", monospace;
+    margin-bottom: 5%;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
 .card {
     position: relative;
     width: 200px;
@@ -364,6 +370,13 @@ header i {
     margin-bottom: 5%;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
+}
+.seccion-eventos p{
+    color: white;
+    font-size: 20px;
+    font-family: "JetBrains Mono", monospace;
+    margin-top: 2%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .ag-format-container {
@@ -1306,7 +1319,7 @@ input[type="date"] {
 
     .tarjetas-categoria h2 {
         font-size: 60px;
-        margin-bottom: 70px;
+        margin-bottom: 40px;
         margin-top: 50px;
     }
 
@@ -1429,7 +1442,14 @@ input[type="date"] {
         letter-spacing: 2px;
         font-weight: 500;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+    .calendario p{
+        color: white;
+        font-size: 20px;
+        font-family: "JetBrains Mono", monospace;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         margin-bottom: 5%;
+        margin-top: 2%;
     }
     .calendario ul li {
         color: white;

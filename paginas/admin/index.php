@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['admin_id'])) {
-  header("Location: ../login/index.html");
+  header("Location: ../login/index.php");
   exit();
 }
 # Incluimos el archivo de conexión a la base de datos

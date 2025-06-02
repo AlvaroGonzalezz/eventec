@@ -60,7 +60,7 @@ if ($resultado2 && $resultado2->num_rows > 0) {
       <nav class="nav-links">
         <a href="../inicio/index.php"><i class="bi bi-house-door"></i>Inicio</a>
         <a href="../acerca-de/index.html"><i class="bi bi-info-circle"></i>Acerca De</a>
-        <a href="../login/index.html"><i class="bi bi-person-fill"></i></i>Iniciar Sesión</a>
+        <a href="../login/index.php"><i class="bi bi-person-fill"></i></i>Iniciar Sesión</a>
       </nav>
     </header>
 
@@ -76,6 +76,7 @@ if ($resultado2 && $resultado2->num_rows > 0) {
     <!-- Sección de tarjetas -->
     <div class="tarjetas-categoria">
       <h2>CATEGORÍAS</h2>
+      <p>Se presentan las categorías de los eventos del Instituto</p>
       <div class="card-container">
         <div class="card">
           <div class="blob"></div>
@@ -170,6 +171,7 @@ if ($resultado2 && $resultado2->num_rows > 0) {
     </div>
     <div class="seccion-eventos" id="eventos">
       <h2>EVENTOS</h2>
+      <p>Selecciona los filtros que desees y pulsa la lupa de búsqueda</p>
       <form id="form-filtro">
         <div class="barra-filtro">
           <div class="filtro-container">
@@ -259,6 +261,7 @@ if ($resultado2 && $resultado2->num_rows > 0) {
     </div>
     <div class="calendario">
       <h2>CALENDARIO</h2>
+      <p>Muestra los eventos del mes actual</p>
       <ul>
         <?php
         $diasDelMes = cal_days_in_month(CAL_GREGORIAN, $mesActual, $anioActual);

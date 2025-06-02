@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
                 title: 'Error',
                 text: 'Método no permitido',
                 confirmButtonText: 'Aceptar'
-            }).then(() => { window.location.href = '../../paginas/login/index.html'; });
+            }).then(() => { window.location.href = '../../paginas/login/index.php'; });
         });
     </script>";
     exit;
