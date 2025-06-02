@@ -391,7 +391,6 @@ header i {
     flex-basis: calc(33.33333% - 30px);
 
     margin: 0 15px 30px;
-  z-index: -10;         /* un valor menor */
 
     overflow: hidden;
     text-decoration: none;
@@ -480,7 +479,6 @@ header i {
     .ag-courses_item {
         -ms-flex-preferred-size: calc(50% - 30px);
         flex-basis: calc(50% - 30px);
-        z-index: -10; /* un valor menor */
     }
 
     .ag-courses-item_title {
