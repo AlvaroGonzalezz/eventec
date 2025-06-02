@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-
+    scroll-behavior: smooth;
 }
 
 body {
@@ -168,11 +168,17 @@ header i {
     font-family: "Anton", monospace;
     letter-spacing: 2px;
     font-weight: 500;
-    margin-bottom: 25%;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
 }
-
+.tarjetas-categoria p{
+    color: white;
+    font-size: 20px;
+    font-family: "JetBrains Mono", monospace;
+    margin-bottom: 5%;
+    margin-top: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
 .card {
     position: relative;
     width: 200px;
@@ -326,6 +332,24 @@ header i {
 
 
 /* Seccion de Eventos */
+.btnRegresar {
+    margin-top: 5%;
+}
+.btnRegresar a{
+    text-decoration: none;
+    color: white;
+    border: solid 1px red;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: #950005;
+    padding-left: 35px;
+    padding-right: 35px;
+    font-family: "JetBrains Mono", monospace;
+}
+.btnRegresar a:hover {
+    background-color: #640000;
+}
 .calendario {
     display: none;
 }
@@ -346,6 +370,13 @@ header i {
     margin-bottom: 5%;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
+}
+.seccion-eventos p{
+    color: white;
+    font-size: 20px;
+    font-family: "JetBrains Mono", monospace;
+    margin-top: 2%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .ag-format-container {
@@ -479,6 +510,7 @@ header i {
     .ag-courses_item {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
+        z-index: -10; /* un valor menor */
     }
 
     .ag-courses-item_title {
@@ -599,7 +631,7 @@ header i {
 /* FOOTER */
 
 footer {
-    width: 98vw;
+    width: 99vw;
     background-color: #00000048;
     margin-top: 10%;
     padding-top: 40px;
@@ -654,6 +686,28 @@ footer p {
 
 /* Estilos para el menú administrativo */
 
+.modal-dialog {
+    margin-top: 20% !important;
+}
+
+.btn-primary {
+    background-color: #b30000;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.btn-primary:hover {
+    background-color: #eb0404;
+}
+
 .container-admin {
     display: flex;
     flex-direction: column;
@@ -671,7 +725,7 @@ footer p {
     font-size: 35px;
     text-align: center;
     color: white;
-    margin-top: 80px;
+    margin-top: 30px;
     font-family: "Anton", sans-serif;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -709,6 +763,11 @@ footer p {
 .btn-nuevo:hover {
     background-color: #eb0404;
 }
+
+
+
+/* Buscador */
+
 
 .buscador {
     display: flex;
@@ -760,11 +819,12 @@ footer p {
 
 .contenedor-tabla th,
 td {
-    border: 0.55px solid white;
+    border: 0.35px solid rgb(255, 70, 70);
     padding: 12px;
     text-align: center;
     vertical-align: middle;
     font-size: 0.95rem;
+    color: white;
 }
 
 .contenedor-tabla th {
@@ -795,12 +855,12 @@ td {
 
 
 .form-nuevo-evento {
-    margin-top: 20% !important;
-    margin-bottom: 20% !important;
+    margin-top: 13% !important;
+    margin-bottom: 5% !important;
     background-color: #7b0f0f;
     padding: 30px;
     border-radius: 25px;
-    width: 320px;
+    width: 420px;
     color: white;
     box-shadow: 0 8px 20px rgba(255, 0, 0, 0.6);
     margin: 40px auto;
@@ -811,6 +871,8 @@ td {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 25px;
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
 }
 
 .campo-form {
@@ -825,6 +887,7 @@ td {
     color: white;
     font-size: 1rem;
     pointer-events: none;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .campo-form i:first-child {
@@ -905,6 +968,12 @@ input[type="date"] {
     cursor: pointer;
     color: black;
     margin-top: 30px;
+}
+
+.btn-registrar:hover {
+    background-color: #940000;
+    color: white;
+    transition: background-color 0.3s ease;
 }
 
 /* Login */
@@ -1024,6 +1093,122 @@ input[type="date"] {
     color: white !important;
 }
 
+/* Pagina Acerca De */
+.card-preguntas {
+    max-width: 500px;
+    border-width: 1px;
+    border-color: rgb(255, 0, 0);
+    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.836);
+    padding: 1rem;
+    width: 80%;
+    height: 60%;
+    margin: 0.3rem;
+}
+.slider-img2 {
+    border-radius: 10px;
+    width: auto;
+    object-fit: contain;
+    height: 40px;
+}
+.preguntas {
+    display: flex !important;
+    margin: 0 auto !important;
+    justify-content: center;
+    margin-top: 3% !important;
+
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
+    gap: 1rem;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background-color: rgb(157, 1, 1);
+    padding: 0.5rem;
+    color: rgba(255, 1, 1);
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.icon svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+.alert {
+    color: rgb(104, 0, 0);
+    margin-right: 55px;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+}
+
+.message {
+    color: rgb(0, 0, 0);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: -20px;
+}
+
+
+
+.mark-as-read,
+.read {
+    display: inline-block;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    margin-top: 8% !important;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.read {
+    background-color: rgb(174, 3, 3);
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    left: 100;
+    text-decoration: none;
+}
+
+.read:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+.slider-img {
+    border-radius: 10px;
+    width: auto;
+    object-fit: contain;
+}
+
+
+/* Alertas */
+
+.swal2-confirm {
+    background: #b30000 !important;
+}
+
+.swal2-confirm:hover {
+    background: rgb(74, 16, 11) !important;
+}
+
 /* Responsive o Vista para escritorio */
 @media (min-width: 1024px) {
     header {
@@ -1134,7 +1319,7 @@ input[type="date"] {
 
     .tarjetas-categoria h2 {
         font-size: 60px;
-        margin-bottom: 70px;
+        margin-bottom: 40px;
         margin-top: 50px;
     }
 
@@ -1257,9 +1442,28 @@ input[type="date"] {
         letter-spacing: 2px;
         font-weight: 500;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-        margin-bottom: 5%;
     }
-
+    .calendario p{
+        color: white;
+        font-size: 20px;
+        font-family: "JetBrains Mono", monospace;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        margin-bottom: 5%;
+        margin-top: 2%;
+    }
+    .calendario ul li {
+        color: white;
+        z-index: -100;
+    }
+    .calendario .evento-existe {
+        color: #fefefe;
+        font-weight: bold;
+        font-size: 1rem;
+        background: #340c0c;
+        border-radius: 10px;
+        padding: 5px;
+        z-index: 200000 !important;
+    }
     ul {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -1272,20 +1476,29 @@ input[type="date"] {
     ul li {
         display: flex;
         width: 10rem;
-        height: 10rem;
+        height: auto;
         margin: 0.25rem;
         flex-flow: column;
         border-radius: 0.2rem;
         padding: 1rem;
         font-weight: 300;
         font-size: 0.8rem;
+        font-family: "JetBrains Mono", monospace;
         box-sizing: border-box;
-        background: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        background: #950005c3;
+        box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
         backdrop-filter: blur(4px);
         -webkit-backdrop-filter: blur(4px);
         border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.18);
+        border: 1px solid rgba(255, 0, 0, 0.375);
+    }
+    ul li:hover {
+        background: #690000c3;
+        box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 10px;
+        border: 1px solid rgba(255, 0, 0, 0.375);
     }
 
     ul li time {
@@ -1312,5 +1525,9 @@ input[type="date"] {
 
     .login .form {
         margin-top: 5% !important;
+    }
+
+    .modal-dialog {
+        margin-top: 10% !important;
     }
 }
