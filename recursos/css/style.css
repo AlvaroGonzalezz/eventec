@@ -171,7 +171,8 @@ header i {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
 }
-.tarjetas-categoria p{
+
+.tarjetas-categoria p {
     color: white;
     font-size: 20px;
     font-family: "JetBrains Mono", monospace;
@@ -179,6 +180,7 @@ header i {
     margin-top: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
 .card {
     position: relative;
     width: 200px;
@@ -335,7 +337,8 @@ header i {
 .btnRegresar {
     margin-top: 5%;
 }
-.btnRegresar a{
+
+.btnRegresar a {
     text-decoration: none;
     color: white;
     border: solid 1px red;
@@ -347,9 +350,11 @@ header i {
     padding-right: 35px;
     font-family: "JetBrains Mono", monospace;
 }
+
 .btnRegresar a:hover {
     background-color: #640000;
 }
+
 .calendario {
     display: none;
 }
@@ -371,7 +376,8 @@ header i {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 
 }
-.seccion-eventos p{
+
+.seccion-eventos p {
     color: white;
     font-size: 20px;
     font-family: "JetBrains Mono", monospace;
@@ -510,7 +516,28 @@ header i {
     .ag-courses_item {
         -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
-        z-index: -10; /* un valor menor */
+    }
+
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .barra-filtro select {
+        padding: 10px;
+        margin-top: 5%;
+        margin-bottom: 4%;
+    }
+
+    .barra-filtro button {
+        padding: 2px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .barra-filtro input {
+        padding: 10px;
     }
 
     .ag-courses-item_title {
@@ -1105,12 +1132,14 @@ input[type="date"] {
     height: 60%;
     margin: 0.3rem;
 }
+
 .slider-img2 {
     border-radius: 10px;
     width: auto;
     object-fit: contain;
     height: 40px;
 }
+
 .preguntas {
     display: flex !important;
     margin: 0 auto !important;
@@ -1197,6 +1226,7 @@ input[type="date"] {
     width: auto;
     object-fit: contain;
 }
+
 
 
 /* Alertas */
@@ -1443,7 +1473,8 @@ input[type="date"] {
         font-weight: 500;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     }
-    .calendario p{
+
+    .calendario p {
         color: white;
         font-size: 20px;
         font-family: "JetBrains Mono", monospace;
@@ -1451,10 +1482,12 @@ input[type="date"] {
         margin-bottom: 5%;
         margin-top: 2%;
     }
+
     .calendario ul li {
         color: white;
         z-index: -100;
     }
+
     .calendario .evento-existe {
         color: #fefefe;
         font-weight: bold;
@@ -1464,6 +1497,7 @@ input[type="date"] {
         padding: 5px;
         z-index: 200000 !important;
     }
+
     ul {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
@@ -1492,6 +1526,7 @@ input[type="date"] {
         border-radius: 10px;
         border: 1px solid rgba(255, 0, 0, 0.375);
     }
+
     ul li:hover {
         background: #690000c3;
         box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.37);
