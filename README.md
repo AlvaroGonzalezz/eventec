@@ -6,6 +6,13 @@ Repositorio del proyecto gestor de eventos del instituto realizado por estudiant
 - Filtrar eventos
 - Registrar, Actualizar, Eliminar eventos (Administrador)
 
+### **Instalación**
+- Es necesario tener instalado XAMPP en tu equipo
+- Clonar o tener este repositorio en la carpeta htdocs ubicado dentro de la carpeta de instalación de XAMPP
+- Importar la base de datos del proyecto (ubicada en db/eventec_final.sql)
+- Encender servidores de Apache y MySQL ubicado en XAMPP
+- Abrir en tu navegador lo siguiente: localhost/eventec/paginas/inicio
+
 ### **Tecnologías usadas**
 - Frontend: HTML, CSS, JS
 - Backend: PHP
